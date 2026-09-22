@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Φοιτητές με Αίτηση Πρακτικής</title>
+</head>
+<body>
+    <h2>📋 Φοιτητές που έχουν υποβάλει αίτηση</h2>
+
+    <table border="1">
+        <tr>
+            <th>Όνομα</th>
+            <th>ΑΜ</th>
+            <th>Email</th>
+            <th>Προτιμώμενη Τοποθεσία</th>
+        </tr>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.fullName}">Όνομα</td>
+            <td th:text="${student.registrationNumber}">ΑΜ</td>
+            <td th:text="${student.email}">Email</td>
+            <td th:text="${student.preferredLocation}">Τοποθεσία</td>
+        </tr>
+    </table>
+
+    <br>
+    <a th:href="@{/committee_dashboard}">🔙 Επιστροφή στο Dashboard</a>
+</body>
+</html>

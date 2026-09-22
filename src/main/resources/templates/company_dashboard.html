@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Πίνακας Ελέγχου Εταιρείας</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+    <header>
+        <h1>Καλώς ήρθατε, <span th:text="${company.companyName}">Όνομα Εταιρείας</span>!</h1>
+    </header>
+
+    <section>
+        <h2>Στοιχεία Εταιρείας</h2>
+        <ul>
+            <li><strong>Τοποθεσία:</strong> <span th:text="${company.location}">Πόλη</span></li>
+            <li><strong>Email:</strong> <span th:text="${company.email}">email@example.com</span></li>
+            <li><strong>Χρήστης:</strong> <span th:text="${company.username}">username</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>🔍 Επιλογές</h2>
+        <ul>
+            <li><a th:href="@{/company/positions}">📋 Προβολή όλων των θέσεων πρακτικής</a></li>
+			<a th:href="@{/company/available_positions}">📋 Προβολή Διαθέσιμων Θέσεων</a>
+
+			<a th:href="@{/company/create-position}">📋 Δημιουργία Νέας Θέσης Πρακτικής</a><br><br>
+
+            <li><a th:href="@{/company/assigned-positions}">✅ Προβολή θέσεων που έχουν ανατεθεί</a></li>
+            <!-- Αν χρειαστεί: <li><a th:href="@{/company/add-position}">➕ Προσθήκη νέας θέσης</a></li> -->
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Traineeship App</p>
+    </footer>
+</body>
+</html>

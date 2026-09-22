@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ανατεθειμένες Θέσεις</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>✅ Θέσεις Πρακτικής που Έχουν Ανατεθεί σε Φοιτητές</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Τίτλος</th>
+                <th>Περιγραφή</th>
+                <th>Φοιτητής</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="position : ${assignedPositions}">
+                <td th:text="${position.title}">Τίτλος</td>
+                <td th:text="${position.description}">Περιγραφή</td>
+                <td th:text="${position.assignedStudent.user.fullName}">Φοιτητής</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/company/dashboard}">🔙 Επιστροφή στον Πίνακα Ελέγχου</a>
+</body>
+</html>

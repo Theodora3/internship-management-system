@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Διαθέσιμες Θέσεις Εταιρείας</title>
+</head>
+<body>
+    <h2>📋 Συνολικές Θέσεις Πρακτικής </h2>
+
+    <div th:if="${positions.size() == 0}">
+        <p>Δεν υπάρχουν διαθέσιμες θέσεις.</p>
+    </div>
+
+    <table th:if="${positions.size() > 0}" border="1">
+        <tr>
+            <th>Τίτλος</th>
+            <th>Περιγραφή</th>
+            <th>Τοποθεσία</th>
+            <th>Διάρκεια</th>
+            <th>Απαιτούμενες Δεξιότητες</th>
+            <th>Ενδιαφέροντα</th>
+        </tr>
+        <tr th:each="pos : ${positions}">
+            <td th:text="${pos.title}"></td>
+            <td th:text="${pos.description}"></td>
+            <td th:text="${pos.location}"></td>
+            <td th:text="${pos.duration} + ' εβδομάδες'"></td>
+            <td th:text="${pos.requiredSkills}"></td>
+            <td th:text="${pos.topics_of_interest}"></td>
+        </tr>
+    </table>
+
+    <br>
+    <a th:href="@{/committee_dashboard}">🔙 Επιστροφή στο Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<form action="/register/redirect" method="POST">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+    <select name="role" required>
+        <option value="">-- Επιλογή Ρόλου --</option>
+        <option value="student">Φοιτητής</option>
+        <option value="professor">Καθηγητής</option>
+        <option value="company">Εταιρεία</option>
+        <option value="committee">Επιτροπή</option>
+    </select>
+    <br><br>
+    <button type="submit">Συνέχεια</button>
+</form>

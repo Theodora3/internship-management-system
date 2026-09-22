@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Φοιτητικό Dashboard</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div th:if="${successMessage}">
+        <p style="color: green; font-weight: bold;" th:text="${successMessage}"></p>
+    </div>
+
+    <h1>Φοιτητικό Dashboard</h1>
+    <p>Καλωσήρθατε στο Dashboard σας!</p>
+
+<!-- Κουμπί για προβολή διαθέσιμων θέσεων -->
+<a th:href="@{/student/available-positions}">
+    <button>Διαθέσιμες Θέσεις Πρακτικής</button>
+</a>
+
+
+<!-- Κουμπί για το ημερολόγιο πρακτικής άσκησης -->
+<a th:href="@{/logbook}">
+    <button>Ημερολόγιο Πρακτικής Άσκησης</button>
+</a>
+
+</body>
+</html>

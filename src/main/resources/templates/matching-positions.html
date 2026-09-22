@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Συνολικές Θέσεις για τον Φοιτητή</title>
+</head>
+<body>
+    <h2>Θέσεις Πρακτικής για τον Φοιτητή: <span th:text="${student.name}"></span></h2>
+
+    <div th:if="${positions.size() == 0}">
+        <p>Δεν υπάρχουν διαθέσιμες θέσεις που να ταιριάζουν.</p>
+    </div>
+
+    <table th:if="${positions.size() > 0}" border="1">
+        <tr>
+            <th>Τίτλος</th>
+            <th>Περιγραφή</th>
+            <th>Τοποθεσία</th>
+            <th>Διάρκεια</th>
+            <th>Απαιτούμενες Δεξιότητες</th>
+        </tr>
+        <tr th:each="pos : ${positions}">
+            <td th:text="${pos.title}"></td>
+            <td th:text="${pos.description}"></td>
+            <td th:text="${pos.location}"></td>
+            <td th:text="${pos.duration + ' εβδομάδες'}"></td>
+            <td th:text="${pos.requiredSkills}"></td>
+        </tr>
+    </table>
+
+    <br>
+    <a th:href="@{/committee/dashboard}">🔙 Επιστροφή στο Dashboard</a>
+</body>
+</html>

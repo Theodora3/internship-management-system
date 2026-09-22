@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Professor Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2em;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .traineeship {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 1em;
+            margin-bottom: 2em;
+        }
+        label {
+            display: block;
+            margin-top: 0.5em;
+        }
+        select {
+            margin-left: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Καθηγητής - Πίνακας Ελέγχου</h1>
+    <p>Αυτός είναι ο πίνακας ελέγχου του καθηγητή.</p>
+
+    <h2>Θέσεις Πρακτικής Άσκησης που Επιβλέπετε</h2>
+
+    <!-- Για κάθε θέση πρακτικής -->
+    <div class="traineeship">
+        <p><strong>Φοιτητής:</strong> Μαρία Παπαδοπούλου</p>
+        <p><strong>Εταιρεία:</strong> Τεχνολογίες ΑΕ</p>
+        <p><strong>Τίτλος Θέσης:</strong> Web Developer Intern</p>
+
+        <h3>Αξιολόγηση Φοιτητή</h3>
+        <form method="post" action="/submit-evaluation">
+            <label>Κίνητρο:
+                <select name="motivation">
+                    <option value="1">1 - Κακό</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - Μέτριο</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Άριστο</option>
+                </select>
+            </label>
+            <label>Αποτελεσματικότητα:
+                <select name="effectiveness">
+                    <option value="1">1 - Κακό</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - Μέτριο</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Άριστο</option>
+                </select>
+            </label>
+            <label>Αποδοτικότητα:
+                <select name="efficiency">
+                    <option value="1">1 - Κακό</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - Μέτριο</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Άριστο</option>
+                </select>
+            </label>
+
+            <h3>Αξιολόγηση Εταιρείας</h3>
+            <label>Εγκαταστάσεις:
+                <select name="facilities">
+                    <option value="1">1 - Κακό</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - Μέτριο</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Άριστο</option>
+                </select>
+            </label>
+            <label>Καθοδήγηση Φοιτητή:
+                <select name="guidance">
+                    <option value="1">1 - Κακό</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - Μέτριο</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Άριστο</option>
+                </select>
+            </label>
+
+            <input type="hidden" name="traineeshipId" value="123"> <!-- ID θέσης -->
+            <button type="submit">Υποβολή Αξιολόγησης</button>
+        </form>
+    </div>
+
+    <!-- Περισσότερες θέσεις θα μπορούσαν να εμφανιστούν εδώ -->
+</body>
+</html>
